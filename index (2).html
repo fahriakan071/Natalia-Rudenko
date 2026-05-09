@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natalia Rudenko❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0c0c1a;
+    overflow-x: hidden;
+}
+
+/* GİRİŞ */
+#giris {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ff4b5c, #ff758c);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    z-index: 10;
+}
+
+#giris h2 {
+    color: white;
+    font-size: 18px;
+    max-width: 90%;
+}
+
+input {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 15px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #ff4b5c;
+    font-weight: bold;
+}
+
+/* TELEFON */
+.telefon {
+    max-width: 430px;
+    margin: auto;
+    background: #12122a;
+    min-height: 100vh;
+    padding: 15px;
+    box-sizing: border-box;
+    color: white;
+}
+
+/* BAŞLIK */
+h2, h3 {
+    text-align: center;
+}
+
+/* MÜZİK */
+audio {
+    width: 100%;
+    margin: 10px 0 20px;
+}
+
+/* ALBÜM */
+.album {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.album img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* NOT */
+.not {
+    background: rgba(255,255,255,0.08);
+    padding: 12px;
+    border-radius: 12px;
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* KALPLER */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    color: #ff4b5c;
+    font-size: 18px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(0); opacity: 0;}
+    20% {opacity: 0.8;}
+    100% {transform: translateY(-110vh); opacity: 0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- GİRİŞ -->
+<div id="giris">
+
+    <h2>
+        🌸 Найкрасивіша мама у світі, ласкаво просимо ❤️<br><br>
+
+        <span style="font-size:15px;">
+        Усередині тебе чекає щось особливе ✨<br>
+        Ти можеш увійти, ввівши пароль.
+        </span>
+    </h2>
+
+    <input type="password" id="sifre" placeholder="пароль">
+    <button onclick="giris()">увійти</button>
+
+</div>
+
+<!-- İÇERİK -->
+<div class="telefon">
+
+<div id="icerik" style="display:none;">
+
+    <h2>❤️ Natalia Rudenko ❤️ </h2>
+
+    <audio controls autoplay>
+        <source src="muzik.mp3" type="audio/mpeg">
+    </audio>
+
+    <h3>📸 Albüm</h3>
+
+    <div class="album">
+        <img src="foto1.jpg">
+        <img src="foto2.jpg">
+        <img src="foto3.jpg">
+        <img src="foto4.jpg">
+        <img src="foto5.jpg">
+        <img src="foto6.jpg">
+        <img src="foto7.jpg">
+        <img src="foto8.jpg">
+        <img src="foto9.jpg">
+        <img src="foto10.jpg">
+        <img src="foto11.jpg">
+        <img src="foto12.jpg">
+        <img src="foto13.jpg">
+        <img src="foto14.jpg">
+        <img src="foto15.jpg">
+        <img src="foto16.jpg">
+        <img src="foto17.jpg">
+        <img src="foto18.jpg">
+        <img src="foto19.jpg">
+        <img src="foto20.jpg">
+        <img src="foto21.jpg">
+        <img src="foto22.jpg">
+        <img src="foto23.jpg">
+        <img src="foto24.jpg">
+        <img src="foto25.jpg">
+        <img src="foto26.jpg">
+    </div>
+
+    <h3>💌 Not</h3>
+
+    <div class="not">
+        Ця сторінка для найкращої та найпрекраснішої мами у світі. Сподіваюся, вам сподобається. Я люблю вас. Чудово мати таку людину, як ви, у моєму житті. З Днем матері!
+    </div>
+
+</div>
+
+</div>
+
+<script>
+
+function giris(){
+    let s = document.getElementById("sifre").value;
+
+    if(s === "Rudenko"){
+        document.getElementById("giris").style.display = "none";
+        document.getElementById("icerik").style.display = "block";
+    } else {
+        alert("Yanlış şifre 😄");
+    }
+}
+
+/* kalpler */
+function kalp(){
+    const h = document.createElement("div");
+    h.classList.add("heart");
+    h.innerHTML = "❤️";
+    h.style.left = Math.random()*100 + "vw";
+    h.style.fontSize = (Math.random()*20+10)+"px";
+    h.style.animationDuration = (Math.random()*3+4)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),7000);
+}
+setInterval(kalp,300);
+
+</script>
+
+</body>
+</html>
